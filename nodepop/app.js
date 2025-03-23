@@ -4,8 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
+import * as homeController from './controllers/homeController.js';
 import connectMongoose from './lib/connectMongoose.js';
 
 await connectMongoose();
@@ -20,6 +19,8 @@ const app = express();
 app.set('views', 'views');
 app.set('view engine', 'ejs');
 
+app.locals.appName = 'Nodepop';
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,8 +31,7 @@ app.use(express.static(path.join(import.meta.dirname, 'public')));
  * Application routes
  */
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.get('/', homeController.index);
 
 /**
  * Catch 404 and forward to error handler
