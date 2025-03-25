@@ -1,7 +1,13 @@
 <%- include('header.ejs') %>
         <div class="container">
             <h1>Compra y vende artículos</h1>
-
+            <% products.forEach(product => { %>
+                <div>
+                    <h4><%= product.name %></h4> 
+                    <p><%= product.price %> $</p>
+                    <p><%= product.owner %></p>
+                </div>
+            <% }); %>
         </div>
 
 <%- include('footer.ejs') %> 
