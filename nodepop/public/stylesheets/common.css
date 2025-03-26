@@ -26,6 +26,11 @@ p {
     margin-top: 0;
 }
 
+.heading {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
 p {
     margin: 0;
     margin-bottom: 1rem;

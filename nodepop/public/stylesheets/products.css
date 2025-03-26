@@ -1,0 +1,28 @@
+.products {
+    margin-bottom: 3rem;
+
+    .header {
+        margin-bottom: 1rem;
+    }
+    
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    
+        .card {
+            .card-body {
+                .card-title {
+                    font-weight: 700;
+                }
+                .card-text {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}

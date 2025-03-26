@@ -1,13 +1,23 @@
 <%- include('header.ejs') %>
-        <div class="container">
-            <h1>Compra y vende artículos</h1>
-            <% products.forEach(product => { %>
-                <div>
-                    <h4><%= product.name %></h4> 
-                    <p><%= product.price %> $</p>
-                    <p><%= product.owner %></p>
-                </div>
-            <% }); %>
-        </div>
 
-<%- include('footer.ejs') %> 
+<div class="container">
+    <section class="products">
+        <h1 class="heading">Compra y vende artículos</h1>
+        <ul class="list">
+            <% products.forEach(product => { %>
+                <li>
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= product.price %> $</h5>
+                            <p class="card-text"><%= product.name %></p>
+                            <a href="#" class="btn btn-outline-success">Go somewhere</a>
+                        </div>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </section>
+</div>
+
+<%- include('footer.ejs') %>
