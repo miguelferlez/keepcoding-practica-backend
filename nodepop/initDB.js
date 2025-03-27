@@ -20,16 +20,16 @@ async function initProducts() {
     console.log(`Removed ${deleteResult.deletedCount} products!`);
 
     const insertResult = await Product.insertMany([
-        { name: 'Lorem', price: 20},
-        { name: 'Ipsum', price: 13.99},
-        { name: 'Dolor sit', price: 9.95},
-        { name: 'Amet', price: 35},
-        { name: 'Consectetur', price: 66},
-        { name: 'Adiscing elit', price: 42.50},
-        { name: 'Duis dignissim', price: 50},
-        { name: 'Aliquet', price: 4},
-        { name: 'Pellentesque', price: 7.99},
-        { name: 'Vestibulum', price: 16},
+        { name: 'Lorem', price: 20, image: './images/product1-1.jpg' },
+        { name: 'Ipsum', price: 13.99, image: './images/product2-1.jpg' },
+        { name: 'Dolor sit', price: 9.95, image: './images/product3-1.jpg' },
+        { name: 'Amet', price: 35, image: './images/product4-1.jpg' },
+        { name: 'Consectetur', price: 66, image: './images/product5-1.jpg' },
+        { name: 'Adiscing elit', price: 42.50, image: './images/product6-1.jpg' },
+        { name: 'Duis dignissim', price: 50, image: './images/product7-1.jpg' },
+        { name: 'Aliquet', price: 4, image: './images/product8-1.jpg' },
+        { name: 'Pellentesque', price: 7.99, image: './images/product9-1.jpg' },
+        { name: 'Vestibulum', price: 16, image: './images/product10-1.jpg' },
     ]);
     console.log(`Inserted ${insertResult.length} products!`);
 }

@@ -15,6 +15,12 @@
         gap: 20px;
     
         .card {
+            .card-img-top {
+                height: 250px;
+                object-fit: cover;
+                object-position: center;
+            }
+
             .card-body {
                 .card-title {
                     font-weight: 700;
