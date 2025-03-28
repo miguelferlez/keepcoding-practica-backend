@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const productSchema = new Schema({
     name: String,
     owner: { ref: 'User', type: Schema.Types.ObjectId, index: true },
-    price: { type: Number, min: 0 },
+    price: { type: Number, min: 1 },
     image: String,
     tags: [String]
 }, {

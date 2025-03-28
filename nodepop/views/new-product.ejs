@@ -2,36 +2,42 @@
 
 <div class="container">
     <h2 class="heading">Add a new product</h2>
+    <% if (error) { %>
+        <div class="error">
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <p><%= error %></p>
+        </div>
+    <% } %>
     <form method="post">
         <div class="mb-3">
             <label for="inputProductName" class="form-label">Name <span class="warning">*</span></label>
-            <input required type="text" name="productName" class="form-control" id="inputProductName" aria-describedby="nameHelp">
+            <input required type="text" name="name" class="form-control" id="inputProductName" aria-describedby="nameHelp" value="<%= name %>" >
             <div id="nameHelp" class="form-text">Good titles present the product and its key details in a few words.</div>
         </div>
         <div class="mb-3">
             <label for="inputProductPrice" class="form-label">Price <span class="warning">*</span></label>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
-                <input required type="number" name="productPrice" class="form-control" id="inputProductPrice">
+                <input required type="number" name="price" class="form-control" id="inputProductPrice" value="<%= price %>" >
             </div>
         </div>
         <div class="mb-3">
             <label for="inputProductTags" class="form-label">Tags <span class="warning">*</span></label>
             <div class="tags">
                 <div class="form-check">
-                    <input required class="form-check-input" name="productTag" type="checkbox" value="work" id="inputWorkTag">
+                    <input class="form-check-input" name="tags" type="checkbox" value="work" id="inputWorkTag" <%= checkedTags.includes('work') ? 'checked' : '' %> >
                     <label class="form-check-label" for="inputWorkTag">Work</label>
                 </div>
                 <div class="form-check">
-                    <input required class="form-check-input" name="productTag" type="checkbox" value="lifestyle" id="inputLifestyleTag">
+                    <input class="form-check-input" name="tags" type="checkbox" value="lifestyle" id="inputLifestyleTag" <%= checkedTags.includes('lifestyle') ? 'checked' : '' %> >
                     <label class="form-check-label" for="inputLifestyleTag">Lifestyle</label>
                 </div>
                 <div class="form-check">
-                    <input required class="form-check-input" name="productTag" type="checkbox" value="motor" id="inputMotorTag">
+                    <input class="form-check-input" name="tags" type="checkbox" value="motor" id="inputMotorTag" <%= checkedTags.includes('motor') ? 'checked' : '' %> >
                     <label class="form-check-label" for="inputMotorTag">Motor</label>
                 </div>
                 <div class="form-check">
-                    <input required class="form-check-input" name="productTag" type="checkbox" value="mobileTag" id="inputMobileTag">
+                    <input class="form-check-input" name="tags" type="checkbox" value="mobile" id="inputMobileTag" <%= checkedTags.includes('mobile') ? 'checked' : '' %> >
                     <label class="form-check-label" for="inputMobileTag">Mobile</label>
                 </div>
             </div>
@@ -39,7 +45,7 @@
         </div>
         <div class="mb-3">
             <label for="inputProductImage" class="form-label">Image <span class="warning">*</span></label>
-            <input type="file" name="image" class="form-control" id="inputProductImage" aria-label="Upload" aria-describedby="imageHelp" accept="image/png, image/jpg, image/jpeg">
+            <input required type="file" name="image" class="form-control" id="inputProductImage" aria-label="Upload" aria-describedby="imageHelp" accept="image/png, image/jpg, image/jpeg">
             <div id="imageHelp" class="form-text">Allowed image formats: .png .jpg .jpeg</div>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
