@@ -2,13 +2,19 @@
 
 <div class="container">
     <h2 class="heading">Sign in</h2>
-    <form>
+    <% if (error) { %>
+        <div class="error">
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <p><%= error %></p>
+        </div>
+    <% } %> 
+    <form method="post">
         <div class="mb-3">
-          <label for="inputEmail" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control" id="inputEmail">
+          <label for="inputEmail" class="form-label">Email address <span class="warning">*</span></label>
+          <input type="email" name="email" class="form-control" id="inputEmail" value="<%= email %>">
         </div>
         <div class="mb-3">
-          <label for="inputPassword" class="form-label">Password</label>
+          <label for="inputPassword" class="form-label">Password <span class="warning">*</span></label>
           <input type="password" name="password" class="form-control" id="inputPassword">
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
