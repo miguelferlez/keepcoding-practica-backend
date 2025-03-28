@@ -1,0 +1,16 @@
+import session from "express-session";
+
+const INACTIVITY_EXPIRATION_2_DAYS = (1000 * 60 * 60 * 24) * 2;
+
+export const userSession = session({
+    name: 'nodepop-session',
+    secret: 'WMgwSHu%/bE3;_4#v,@<(^4ZrIM##bmSG',
+    saveUninitialized: true,
+    resave: false,
+    cookie: { maxAge: INACTIVITY_EXPIRATION_2_DAYS }
+});
+
+export function setSessionInViews(req, res, next) {
+    res.locals.session = req.session;
+    next();
+}

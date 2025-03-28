@@ -7,6 +7,7 @@ import logger from 'morgan';
 import connectMongoose from './lib/connectMongoose.js';
 import * as homeController from './controllers/homeController.js';
 import * as loginController from './controllers/loginController.js';
+import * as sessionManager from './lib/sessionManager.js';
 
 await connectMongoose();
 console.log('Connected to MongoDB');
@@ -32,9 +33,12 @@ app.use(express.static(path.join(import.meta.dirname, 'public')));
  * Application routes
  */
 
+app.use(sessionManager.userSession);
+app.use(sessionManager.setSessionInViews);
 app.get('/', homeController.index);
 app.get('/login', loginController.index);
 app.post('/login', loginController.login);
+app.get('/logout', loginController.logout);
 
 /**
  * Catch 404 and forward to error handler
