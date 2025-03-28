@@ -18,3 +18,11 @@ export function setSessionInViews(req, res, next) {
     res.locals.session = req.session;
     next();
 }
+
+export function guard(req, res, nexr) {
+    if (!req.session.userId) {
+        res.redirect(`/login?redir=${req.url}`);
+    }
+
+    next();
+}

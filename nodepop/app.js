@@ -40,7 +40,8 @@ app.get('/', homeController.index);
 app.get('/login', loginController.index);
 app.post('/login', loginController.login);
 app.get('/logout', loginController.logout);
-app.get('/products/new', productsController.index);
+app.get('/products/new', sessionManager.guard, productsController.index);
+app.post('/products/new', sessionManager.guard, productsController.addProduct);
 
 /**
  * Catch 404 and forward to error handler
