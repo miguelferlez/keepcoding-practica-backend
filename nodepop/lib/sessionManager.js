@@ -19,7 +19,7 @@ export function setSessionInViews(req, res, next) {
     next();
 }
 
-export function guard(req, res, nexr) {
+export function guard(req, res, next) {
     if (!req.session.userId) {
         res.redirect(`/login?redir=${req.url}`);
     }
