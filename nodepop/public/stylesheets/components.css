@@ -21,3 +21,11 @@
 .warning {
     color: var(--bs-danger);
 }
+
+.tags {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem;
+    background-color: var(--bg-color-darker);
+    border-radius: var(--bs-border-radius);
+}
