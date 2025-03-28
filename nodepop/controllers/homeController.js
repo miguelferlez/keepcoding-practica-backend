@@ -4,7 +4,9 @@ import User from '../models/User.js';
 
 export async function index(req, res, next){
     try {
-        res.locals.products = await Product.find();
+        const userId = req.session.userId;
+
+        res.locals.products = await Product.find({ owner: userId });
 
         for (let product of res.locals.products) {
             const ownerId = product.owner.toString();

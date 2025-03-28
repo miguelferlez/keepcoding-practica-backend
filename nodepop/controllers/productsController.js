@@ -7,7 +7,8 @@ export function index(req, res, next) {
 export async function addProduct(req, res, next) {
     try {
         const { name, price, image, tags } = req.body;
-        const product = new Product({ name, owner, price, image, tags });
+        const userId = req.session.userId;
+        const product = new Product({ name, owner: userId, price, image, tags });
 
         await product.save();
 
