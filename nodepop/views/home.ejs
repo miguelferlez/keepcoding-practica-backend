@@ -2,22 +2,28 @@
 
 <div class="container">
     <section class="products">
-        <h2 class="heading">Compra y vende artículos</h2>
-        <ul class="list">
-            <% products.forEach(product => { %>
-                <li>
-                    <div class="card">
-                        <img src="<%= product.image %>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= product.price %> $</h5>
-                            <p class="card-text"><%= product.name %></p>
-                            <p class="card-text"><%= product.username %></p>
-                            <a href="#" class="btn btn-outline-success">Go somewhere</a>
+        <% if (!session.userId) { %>
+            <h2 class="heading">Buy and sell second-hand goods</h2>
+            <p><a href="/login">Sign in</a> to access your products.</p>
+        <% } else { %>
+            <h2 class="heading">Welcome back, <%= session.username %>!</h2> 
+            <h2 class="heading">Your products</h2>
+            <ul class="list">
+                <% products.forEach(product => { %>
+                    <li>
+                        <div class="card">
+                            <img src="<%= product.image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product.price %> $</h5>
+                                <p class="card-text"><%= product.name %></p>
+                                <p class="card-text"><%= product.username %></p>
+                                <a href="#" class="btn btn-outline-success">Go somewhere</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            <% }); %>
-        </ul>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %> 
     </section>
 </div>
 

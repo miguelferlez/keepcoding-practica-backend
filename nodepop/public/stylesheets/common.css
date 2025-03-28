@@ -32,7 +32,8 @@ p {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 label {
