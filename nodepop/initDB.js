@@ -43,16 +43,16 @@ async function initProducts() {
     ]);
 
     const insertResult = await Product.insertMany([
-        { name: 'Lorem', price: 20, image: './images/product1-1.jpg', owner: admin._id },
-        { name: 'Ipsum', price: 13.99, image: './images/product2-1.jpg', owner: admin._id },
-        { name: 'Dolor sit', price: 9.95, image: './images/product3-1.jpg', owner: admin._id },
-        { name: 'Amet', price: 35, image: './images/product4-1.jpg', owner: user._id },
-        { name: 'Consectetur', price: 66, image: './images/product5-1.jpg', owner: alice._id},
-        { name: 'Adiscing elit', price: 42.50, image: './images/product6-1.jpg', owner: bob._id },
-        { name: 'Duis dignissim', price: 50, image: './images/product7-1.jpg', owner: alice._id },
-        { name: 'Aliquet', price: 4, image: './images/product8-1.jpg', owner: alice._id },
-        { name: 'Pellentesque', price: 7.99, image: './images/product9-1.jpg', owner: alice._id },
-        { name: 'Vestibulum', price: 16, image: './images/product10-1.jpg', owner: alice._id },
+        { name: 'Lorem', price: 20, image: './images/product1-1.jpg', owner: admin._id, tags:['lifestyle'] },
+        { name: 'Ipsum', price: 13.99, image: './images/product2-1.jpg', owner: admin._id, tags:['lifestyle'] },
+        { name: 'Dolor sit', price: 9.95, image: './images/product3-1.jpg', owner: admin._id, tags:['lifestyle'] },
+        { name: 'Amet', price: 35, image: './images/product4-1.jpg', owner: user._id, tags:['lifestyle'] },
+        { name: 'Consectetur', price: 66, image: './images/product5-1.jpg', owner: alice._id, tags:['motor']},
+        { name: 'Adiscing elit', price: 42.50, image: './images/product6-1.jpg', owner: bob._id, tags:['mobile'] },
+        { name: 'Duis dignissim', price: 50, image: './images/product7-1.jpg', owner: alice._id, tags:['work'] },
+        { name: 'Aliquet', price: 4, image: './images/product8-1.jpg', owner: alice._id, tags:['lifestyle'] },
+        { name: 'Pellentesque', price: 7.99, image: './images/product9-1.jpg', owner: alice._id, tags:['lifestyle'] },
+        { name: 'Vestibulum', price: 16, image: './images/product10-1.jpg', owner: alice._id, tags:['work, lifestyle, mobile'] },
     ]);
     console.log(`Inserted ${insertResult.length} products!`);
 }

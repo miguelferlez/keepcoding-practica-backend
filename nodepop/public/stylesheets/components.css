@@ -29,3 +29,9 @@
     background-color: var(--bg-color-darker);
     border-radius: var(--bs-border-radius);
 }
+
+.card-tags {
+    display: flex;
+    gap: 10px;
+    color: #bdbdbd;
+}
