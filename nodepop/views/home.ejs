@@ -18,8 +18,8 @@
                                 <p class="card-text"><%= product.name %></p>
                                 <p class="card-text"><i class="bi bi-person-circle"></i> <%= product.username %></p>
                                 <div class="card-tags">
-                                    <% for (let tag of product.tags) { %>
-                                        <p class="card-text">#<%= tag %></p>
+                                    <% for (const tag of product.tags) { %>
+                                        <p class="card-text"># <%= tag %></p>
                                     <% } %> 
                                 </div>
                                 <a href="/products/delete/<%= product._id %> " class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Delete</a>
