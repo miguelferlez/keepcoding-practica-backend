@@ -57,7 +57,6 @@ export async function addProduct(req, res, next) {
             return;
         }
 
-
         await product.save();
 
         res.redirect('/');

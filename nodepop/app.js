@@ -39,6 +39,7 @@ app.get('/', homeController.index);
 app.get('/login', loginController.index);
 app.post('/login', loginController.login);
 app.get('/logout', loginController.logout);
+app.get('/:page?', homeController.index);
 app.get('/products/new', sessionManager.guard, productsController.index);
 app.post('/products/new', sessionManager.guard, productsController.upload.single('image'), productsController.addProduct);
 app.get('/products/delete/:productId', sessionManager.guard, productsController.deleteProduct);
