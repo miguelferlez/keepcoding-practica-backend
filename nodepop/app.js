@@ -56,6 +56,13 @@ app.use(function(req, res, next) {
  */
 
 app.use(function(err, req, res, next) {
+  if (err.array) {
+    err.message = 'Invalid request:' + err.array()
+      .map(error => `${error.location} ${error.type} ${error.path} ${error.msg}`)
+      .join(', ');
+    err.status = 422;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = process.env.APP_ENV === 'development' ? err : {};
