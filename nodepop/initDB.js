@@ -53,6 +53,12 @@ async function initProducts() {
         { name: 'Aliquet', price: 4, image: './images/product8-1.jpg', owner: alice._id, tags:['lifestyle'] },
         { name: 'Pellentesque', price: 7.99, image: './images/product9-1.jpg', owner: alice._id, tags:['lifestyle'] },
         { name: 'Vestibulum', price: 16, image: './images/product10-1.jpg', owner: alice._id, tags:['work, lifestyle, mobile'] },
+        { name: 'Curibatur', price: 4200, image: './images/product11-1.jpg', owner: admin._id, tags:['motor'] },
+        { name: 'Maecenas', price: 3, image: './images/product12-1.jpg', owner: admin._id, tags:['mobile'] },
+        { name: 'Sed dapibus', price: 260, image: './images/product13-1.jpg', owner: admin._id, tags:['mobile'] },
+        { name: 'Metus', price: 899, image: './images/product14-1.jpg', owner: admin._id, tags:['work, lifestyle'] },
+        { name: 'At lobortis', price: 144.95, image: './images/product15-1.jpg', owner: admin._id, tags:['motor'] },
+        { name: 'Auctor', price: 300, image: './images/product16-1.jpg', owner: admin._id, tags:['lifestyle, mobile'] },
     ]);
     console.log(`Inserted ${insertResult.length} products!`);
 }
