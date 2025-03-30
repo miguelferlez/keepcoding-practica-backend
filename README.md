@@ -59,7 +59,9 @@ Una vez completada la instalación, para hacer uso la app de Nodepop se deben se
     npm run dev
     ```
 
-3. Haz login con las credenciales de los usuarios creados para testear la app, disponibles en `initDB.js`:
+3. En tu navegador, dirígete a [localhost:3000](http://localhost:3000) o al puerto que hayas establecido por defecto.
+
+4. Haz login con las credenciales de los usuarios creados para testear la app, disponibles en `initDB.js`:
     - `admin@example.com`
     - `user@example.com`
     - `alice@example.com`
