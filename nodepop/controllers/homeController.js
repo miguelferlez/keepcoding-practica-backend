@@ -1,4 +1,3 @@
-import { query, validationResult } from 'express-validator';
 import Product from '../models/Product.js';
 import User from '../models/User.js';
 

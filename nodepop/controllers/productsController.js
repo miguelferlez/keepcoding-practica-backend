@@ -37,7 +37,7 @@ export async function addProduct(req, res, next) {
             const imageFile = path.join(import.meta.dirname,'../public', product.image);
             fs.unlink(imageFile, (err) => {
                 if (err) {
-                    cb(err);
+                    next(err);
                 }
             });
             res.render('new-product')
@@ -46,11 +46,11 @@ export async function addProduct(req, res, next) {
             res.locals.error = 'At least one tag must be checked to proceed.';
             res.locals.name = name;
             res.locals.price = price;
-            res.checkedTags = [];
+            res.locals.checkedTags = [];
             const imageFile = path.join(import.meta.dirname,'../public', product.image);
             fs.unlink(imageFile, (err) => {
                 if (err) {
-                    cb(err);
+                    next(err);
                 }
             });
             res.render('new-product')

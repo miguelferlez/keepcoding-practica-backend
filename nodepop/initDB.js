@@ -1,3 +1,4 @@
+import process from 'node:process';
 import readline from 'node:readline/promises';
 import connectMongoose from './lib/connectMongoose.js';
 import Product from './models/Product.js';
