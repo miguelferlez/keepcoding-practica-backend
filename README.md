@@ -54,8 +54,9 @@ Una vez completada la instalación, para hacer uso la app de Nodepop se deben se
         ./bin/mongod --dbpath ./data
         ```
 
-2. Ejecuta el entorno de desarrollo de la app:
+2. Inicia la aplicación o el entorno de desarrollo:
     ```bash
+    npm start
     npm run dev
     ```
 
